@@ -33,5 +33,15 @@ require 'config\appname_config.pl';
 
 my $feedname = $appname::feedname;
 
+... ...
+
+my $logFile = "$logDir\\$feedname" . $ts . '.log';
+$logconf =~ s/\_nsa_app_logfile/$logFile/;
+
+my @error_list;
+
+# ... passed as a reference to init() and start log ...
+Log::Log4perl::init( \$logconf );
+my $logger = Log::Log4perl::get_logger(__PACKAGE__);
 
 ```
