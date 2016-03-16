@@ -32,6 +32,8 @@ $notify_list = [ qw(
 require 'config\appname_config.pl';
 
 my $feedname = $appname::feedname;
+my $ts = $util->get_yyyymmdd_hhmmss();
+my $logconf = $site_config::logconf;
 
 ... ...
 
